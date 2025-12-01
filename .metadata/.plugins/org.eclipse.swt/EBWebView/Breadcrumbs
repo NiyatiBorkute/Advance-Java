@@ -1,0 +1,38 @@
+0:00:02 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+0:00:02 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+0:00:02 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+0:00:02 Microsoft.UnloadController.ClearUnloadState
+0:00:02 Browser1 Close Tab1 at 0
+0:00:02 Tab1 WebContentsDestroyed
+0:00:02 Microsoft.UnloadController.TabStripEmpty
+0:00:02 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+0:00:02 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+0:00:02 Microsoft.Shutdown.OnWindowClosing
+0:00:02 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+0:00:02 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+0:00:02 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+0:00:02 Widget Closed: BrowserWidget
+0:00:02 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+0:00:02 Microsoft.Shutdown.OnWindowClosing
+0:00:02 Microsoft.Shutdown.OnWindowClosing_DeleteScheduled
+0:00:02 Microsoft.Browser_Removed
+0:00:02 Tab2 StartNav3 #typed
+0:00:02 Tab2 FinishNav3 ERR_ABORTED
+0:00:02 Tab2 StartNav4 #typed
+0:00:02 Tab2 FinishNav4 ERR_ABORTED
+0:00:02 Tab2 StartNav5 #typed
+0:00:02 Tab2 FinishNav5 ERR_ABORTED
+0:00:02 Tab2 StartNav6 #typed
+0:00:02 Memory Pressure: Critical
+0:00:03 Tab2 FinishNav2
+0:00:03 Tab2 PageLoad
+0:00:03 Tab2 FinishNav6
+0:00:03 Tab2 PageLoad
+0:00:04 Memory Pressure: Critical
+0:00:06 Tab2 StartNav7 #typed
+0:00:06 Tab2 FinishNav7
+0:00:06 Tab2 PageLoad
+0:00:06 Tab2 StartNav8 #typed
+0:00:06 Tab2 FinishNav8
+0:00:06 Tab2 PageLoad
+0:00:08 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp

@@ -1,0 +1,37 @@
+package com.demo.service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+import com.demo.beans.Dept;
+import com.demo.dao.DeptDao;
+import com.demo.dao.DeptDaoImpl;
+
+public class DeptServiceImpl implements DeptService{
+	private DeptDao ddao;
+	
+	public void DeptServiceImpl() {
+		ddao=new DeptDaoImpl();
+	}
+	
+	@Override
+	public boolean addNewDept() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enetr deptno");
+		int deptno=sc.nextInt();
+		System.out.println("enter dept name");
+		String dname=sc.next();
+		System.out.println("enetr loc");
+		String loc=sc.next();
+		System.out.println("enetr pwd");
+		String pwd=sc.next();
+		System.out.println("enetr startedon (dd/MM/yyyy)");
+		String dt=sc.next();
+		LocalDate startedon=LocalDate.parse(dt,DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		Dept p=new Dept(deptno,dname,loc,pwd,startedon);
+		return ddao.save(p);
+
+	}
+
+}

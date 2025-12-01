@@ -1,0 +1,9 @@
+package com.demo.service;
+
+public interface DeptService {
+
+	boolean addNewDept();
+
+	boolean deleteByDeptno(int deptno);
+
+}

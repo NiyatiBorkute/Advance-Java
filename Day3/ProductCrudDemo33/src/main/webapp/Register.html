@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+</head>
+<body>
+  <form action="registeruser" method="post">
+    User name: <input type="text" name="uname" required><br/>
+    Email: <input type="email" name="email" required><br/>
+    Password: <input type="password" name="pass" required><br/>
+    
+    Gender: 
+      <input type="radio" name="gender" value="Male">Male
+      <input type="radio" name="gender" value="Female">Female<br/>
+    
+    Hobbies: 
+      <input type="checkbox" name="hobbies" value="Reading">Reading
+      <input type="checkbox" name="hobbies" value="Sports">Sports
+      <input type="checkbox" name="hobbies" value="Music">Music
+      <input type="checkbox" name="hobbies" value="Traveling">Traveling
+      <input type="checkbox" name="hobbies" value="Gaming">Gaming<br/>
+    
+    City: <input type="text" name="city"><br/>
+    
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

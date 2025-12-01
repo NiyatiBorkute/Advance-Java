@@ -1,0 +1,47 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.demo.beans.Department;
+
+public class DepartmentDaoImpl implements DepartmentDao {
+	
+	
+	static Connection conn;
+	static PreparedStatement insDept;
+	static {
+		try {
+			conn=DBUtil.getMyConnection();
+			insDept=conn.prepareStatement("insert into dept values(?,?,?,?,?)");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	@Override
+	public boolean save(Department d) {
+		try {
+			insDept.setInt(1, d.getDeptno());
+			insDept.setString(2, d.getDname());
+			insDept.setString(3, d.getLoc());
+			insDept.setString(4, d.getPwd());
+			insDept.setDate(5, java.sql.Date.valueOf(d.getStartedon()));
+			int n=insDept.executeUpdate();
+			return n>0;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+		
+	}	
+	public void closeConnection() {
+		DBUtil.closeMyConnection();
+		
+	}
+
+	
+
+}

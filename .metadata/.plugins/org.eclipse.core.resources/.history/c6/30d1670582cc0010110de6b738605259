@@ -1,0 +1,13 @@
+package com.demo.dao;
+
+import com.demo.beans.Dept;
+
+public interface DeptDao {
+
+	boolean save(Dept p);
+
+	boolean removeByDeptno(int deptno);
+
+	boolean updateByDeptno(int deptno, String loc, String pwd);
+
+}

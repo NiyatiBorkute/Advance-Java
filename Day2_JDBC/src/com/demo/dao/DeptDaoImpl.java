@@ -1,0 +1,151 @@
+package com.demo.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import com.demo.beans.Dept;
+
+
+
+public class DeptDaoImpl implements DeptDao {
+
+	static Connection conn;
+	static PreparedStatement insdept,deleteByDeptno,findByDeptno,updateByDeptno,sortByPwd,finddept;
+    static {
+    	
+    	try {
+    		conn=DBUtil.getMyConnection();
+			insdept=conn.prepareStatement("insert into dept values(?,?,?,?,?)");
+			deleteByDeptno=conn.prepareStatement("delete from dept where deptno=?");
+			findByDeptno=conn.prepareStatement("select * from dept where deptno=?");
+			finddept=conn.prepareStatement("select * from dept");
+			updateByDeptno=conn.prepareStatement("update dept set loc=?,pwd=? where deptno=?");
+			sortByPwd=conn.prepareStatement("select * from dept order by pwd");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+@Override
+public boolean save(Dept d) {
+		try {
+			insdept.setInt(1, d.getDeptno());
+			insdept.setString(2, d.getDname());
+			insdept.setString(3, d.getLoc());
+			insdept.setString(4, d.getPwd());
+			insdept.setDate(5, java.sql.Date.valueOf(d.getStartedon()));
+			int n=insdept.executeUpdate();
+			return n>0;
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return false;
+		
+	}
+
+@Override
+public boolean removeByDeptno(int deptno) {
+	try {
+		deleteByDeptno.setInt(1, deptno);
+		int n=deleteByDeptno.executeUpdate();
+		if(n>0)
+			return true;
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return false;
+}
+
+@Override
+public boolean updateByDeptno(int deptno, String loc, String pwd) {
+	try {
+		updateByDeptno.setString(1, loc);
+		updateByDeptno.setString(2, pwd);
+		updateByDeptno.setInt(3, deptno);
+		int n=updateByDeptno.executeUpdate();
+		if(n>0)
+			return true;
+	} catch (SQLException e) {
+
+		e.printStackTrace();
+	}
+	return false;
+}
+
+@Override
+public Dept findById(int deptno) {
+	Dept d=null;
+	try {
+		findByDeptno.setInt(1, deptno);
+		ResultSet rs=findByDeptno.executeQuery();
+		
+		if(rs.next()) {
+			if(rs.getDate(5)!=null) {
+				d=new Dept(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate());
+			}else {
+				d=new Dept(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),null);
+			}
+		}
+	}catch(SQLException e) {
+		e.printStackTrace();
+	}
+	return d;
+}
+
+@Override
+public List<Dept> findAllDept() {
+	// TODO Auto-generated method stub
+	List<Dept> plist=new ArrayList<>();
+	try {
+	ResultSet rs=finddept.executeQuery();
+	while(rs.next()) {
+		if(rs.getDate(5)!=null) {
+		   plist.add(new Dept(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate()));
+		}else{
+			plist.add(new Dept(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),null));
+		}
+	}
+	}catch(SQLException e) {
+		e.printStackTrace();
+	}
+	if(plist.size()>0) {
+		return plist;
+	}
+	else {
+		return null;
+	}
+	
+}
+
+@Override
+public List<Dept> arrangeByPwd() {
+	List<Dept> plist=new ArrayList<>();
+    try {
+		ResultSet rs=sortByPwd.executeQuery();
+		while(rs.next()) {
+			if(rs.getDate(5)!=null) {
+			   plist.add(new Dept(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate()));
+			}else{
+				plist.add(new Dept(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),null));
+			}
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	if(plist.size()>0) {
+		return plist;
+	}
+	return null;// TODO Auto-generated method stub
+}
+
+
+}
+
+	
+	

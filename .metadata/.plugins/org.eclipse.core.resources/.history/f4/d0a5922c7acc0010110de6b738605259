@@ -1,0 +1,13 @@
+package com.demo.dao;
+
+import com.demo.beans.Dept;
+
+public class DeptDaoImpl implements DeptDao {
+
+	@Override
+	public boolean save(Dept p) {
+
+		return false;
+	}
+	
+}

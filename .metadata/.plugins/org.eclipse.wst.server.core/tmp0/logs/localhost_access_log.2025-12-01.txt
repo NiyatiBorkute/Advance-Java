@@ -1,0 +1,14 @@
+127.0.0.1 - - [01/Dec/2025:22:13:11 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:13:19 +0530] "GET /JSPDemo/calculateform.jsp HTTP/1.1" 200 1110
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:13:27 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:13:39 +0530] "GET /JSPDemo/getresult.jsp?num1=40&num2=20&btn=add HTTP/1.1" 200 855
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:13:55 +0530] "GET /JSPDemo/getresult.jsp?num1=5&num2=&btn=fact HTTP/1.1" 200 857
+127.0.0.1 - - [01/Dec/2025:22:21:04 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:21:06 +0530] "GET /JSPUseBeanDemo1/productform.jsp HTTP/1.1" 200 519
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:21:38 +0530] "GET /JSPUseBeanDemo1/getproduct.jsp?pid=123&pname=table&qty=3&price=1000&btn=add HTTP/1.1" 200 275
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:22:22 +0530] "GET /JSPUseBeanDemo1/getproduct.jsp HTTP/1.1" 200 269
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:22:24 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:23:10 +0530] "GET /JSPUseBeanDemo1/ HTTP/1.1" 404 772
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:23:14 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:24:20 +0530] "GET /JSPUseBeanDemo1/MyHeader.Html HTTP/1.1" 404 785
+0:0:0:0:0:0:0:1 - - [01/Dec/2025:22:24:26 +0530] "GET /JSPUseBeanDemo1/MyHeader.Html HTTP/1.1" 404 785
