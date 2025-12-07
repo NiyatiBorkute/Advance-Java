@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<bean id="p1" class="com.demo.beans.Product">
+<property name="pid" value="101"></property>
+<property name="pname" value="megha"></property>
+<property name="qty" value="3"></property>
+<property name="price" value="500"></property>
+
+</bean>
+
+<bean id="p2" class="com.demo.beans.Product">
+<property name="pid" value="102"></property>
+<property name="pname" value="muskan"></property>
+<property name="qty" value="31"></property>
+<property name="price" value="100"></property>
+
+</bean>
+
+<bean id="p3" class="com.demo.beans.Product">
+<property name="pid" value="103"></property>
+<property name="pname" value="vaish"></property>
+<property name="qty" value="33"></property>
+<property name="price" value="50"></property>
+
+</bean>
+<bean id="ord1" class="com.demo.beans.Order">
+<property name="orderid" value="1011"></property>
+<property name="cname" value="vidhi"></property>
+<property name="plist">
+	<list>
+	<ref bean="p1"></ref>
+	<ref bean="p2"></ref>
+	<ref bean="p3"></ref>
+	</list>
+</property>
+
+
+</bean>
+</beans>

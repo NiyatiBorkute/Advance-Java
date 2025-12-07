@@ -1,0 +1,74 @@
+package com.demo.beans;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="employee111")
+public class Employee {
+	
+	@Id
+	@GeneratedValue
+	 private int empid;
+	 private String ename;
+	 private double sal;
+	 private String dept;
+	 private int age;
+	public Employee() {
+		super();
+	}
+	public Employee(int empid, String ename, double sal, String dept, int age) {
+		super();
+		this.empid = empid;
+		this.ename = ename;
+		this.sal = sal;
+		this.dept = dept;
+		this.age = age;
+	}
+	public Employee(String ename, double sal, String dept, int age) {
+		super();
+		this.ename = ename;
+		this.sal = sal;
+		this.dept = dept;
+		this.age = age;
+	}
+	public int getEmpid() {
+		return empid;
+	}
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empid=" + empid + ", ename=" + ename + ", sal=" + sal + ", dept=" + dept + ", age=" + age
+				+ "]";
+	}
+	 
+	 
+}
